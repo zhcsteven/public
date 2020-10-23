@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--changed crm/base.html to home.html-->
+{% extends 'home.html' %}
+
+{% load static %}
+{% block content %}
+
+   <body>
+   {% if user.is_authenticated %}
+       <div class="page-container">
+
+           <h2 class="top-menu">Hello {{ user.username }},</h2>
+           <p>Please choose from below options.</p>
+
+       </div>
+   {% endif %}
+   <div class="content container">
+       <div class="row">
+           <div class="col-md-12">
+               <div class="links">
+                   <div class="row">
+                       <div class="col-md-3">
+                           <div class="thumbnail">
+                               <img src="{% static "images/fruits.jpg" %}" alt="Foods"/> (change image to fruits)
+                               <div class="caption">
+                                   <h2>Foods</h2>
+                                   <p>See What we have in stock </p>
+                                   <<p><a href="{url}" (change url to product)</p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <div class="thumbnail">
+                               <img src="{% static "images/money.jpeg" %}" alt="money"/> (change image to money and hotfix turned this to log in)
+                               <div class="caption">
+                                   <h2>Log In</h2>
+                                   <p>Log in to access your stuff</p>
+                                   <p><a href="(login.html)" (change url to login.html)>
+                                       details &raquo;</a></p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <div class="thumbnail">
+                               <img src="{% static "images/computer.jpeg" %}" alt="computer"/> (change image to computer and hotfix turned this to sign up)
+                               <div class="caption">
+                                   <h2>Sign Up</h2>
+                                   <p>Sign up to the website</p>
+                                   <p><a href="{signup.html}"></a> (change url to signup.html)
+                                       Sign Up</p>
+                               </div>
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   </body>
+
+{% endblock %}
+
+</html>
+
